@@ -1,0 +1,12 @@
+{
+	"name" : "NodeJS+WebSockets",
+	"author" : "MrZheng",
+	"contributors" : 
+	[
+		{
+			"name" : "MrZheng",
+			"email" : "mailzwj@126.com"
+		}
+	],
+	"main" : "./server.js"
+}
