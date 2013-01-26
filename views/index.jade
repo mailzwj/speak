@@ -1,12 +1,12 @@
 extends layout
 
 block content
-    h1 Incoming Chat:
+	h1 Incoming Chat:
 	ul#incomingChatMessages
 	input#outgoingChatMessage(type="text")
 	script
 		$(function() {
-			var iosocket = io.connect("http://speak.dev.cnodejs.net:3000/");
+			var iosocket = io.connect("http://10.13.124.223:3000/");
 
 			iosocket.on('connect', function() {
 				$('#incomingChatMessages').append($('<li>Connected</li>'));
