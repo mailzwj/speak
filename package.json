@@ -1,12 +1,12 @@
 {
-	"name" : "NodeJS+WebSockets",
-	"author" : "MrZheng",
-	"contributors" : 
-	[
-		{
-			"name" : "MrZheng",
-			"email" : "mailzwj@126.com"
-		}
-	],
-	"main" : "./server.js"
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.6",
+    "jade": "*"
+  }
 }
