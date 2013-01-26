@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	h1 Incoming Chat:
+	ul#incomingChatMessages
+	input#outgoingChatMessage(type="text")
+	script
+		$(function() {
+			var iosocket = io.connect("http://10.13.124.223:3000/");
+
+			iosocket.on('connect', function() {
+				$('#incomingChatMessages').append($('<li>Connected</li>'));
+
+				iosocket.on('message', function(message) {
+					$('#incomingChatMessages').append($('<li></li>').text(message));
+				});
+				iosocket.on('disconnect', function() {
+					$('#incomingChatMessages').append('<li>Disconnected</li>');
+				});
+			});
+
+			$('#outgoingChatMessage').keypress(function(event) {
+				if(event.which == 13) {
+					event.preventDefault();
+					iosocket.send($('#outgoingChatMessage').val());
+					$('#outgoingChatMessage').val('');
+				}
+			});
+		});
+
