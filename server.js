@@ -5,8 +5,8 @@ var fs = require('fs')
 var server = http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-type': 'text/html'});
     res.end(fs.readFileSync(__dirname + '/index.html'));
-}).listen(80);
-console.log('Listening at: http://localhost:80');
+}).listen(8888);
+console.log('Listening at: http://localhost:8888');
 
 socketio.listen(server).on('connection', function (socket) {
     socket.on('message', function (msg) {
